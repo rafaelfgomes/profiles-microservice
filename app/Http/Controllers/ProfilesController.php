@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Profile as UserProfile;
+use App\Http\Resources\Profile as ProfileResource;
 
 class ProfilesController extends Controller
 {
@@ -18,6 +19,13 @@ class ProfilesController extends Controller
 
     public function index()
     {
-        return response()->json(UserProfile::all());
+        return response()->json(ProfileResource::collection(UserProfile::all()));
+    }
+
+    public function show($id)
+    {
+        $profile = UserProfile::findOrFail($id);
+
+        return response()->json(new ProfileResource($profile));
     }
 }

@@ -16,3 +16,4 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/profiles', 'ProfilesController@index');
+$router->get('/profiles/{id}', 'ProfilesController@show');
