@@ -18,9 +18,12 @@ class Profile extends Resource
         //return parent::toArray($request);
 
         return [
+            'type' => 'profiles',
             'id' => $this->id,
-            'name' => $this->name,
-            'uuid' => $this->uuid
+            'attributes' => [
+                'name' => $this->name,
+                'uuid' => $this->uuid
+            ]
         ];
     }
 

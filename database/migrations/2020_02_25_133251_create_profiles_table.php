@@ -17,7 +17,8 @@ class CreateProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 60);
             $table->string('uuid', 160);
-            $table->timestamp('created_at');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

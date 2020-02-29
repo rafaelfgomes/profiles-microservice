@@ -18,17 +18,20 @@ class ProfilesTableSeeder extends Seeder
             [
                 'name' => 'Administrador do Sistema',
                 'uuid' => Uuid::uuid4(),
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ],
             [
                 'name' => 'Gerente',
                 'uuid' => Uuid::uuid4(),
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ],
             [
                 'name' => 'Vendedor',
                 'uuid' => Uuid::uuid4(),
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]
 
         ];
