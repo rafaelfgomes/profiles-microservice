@@ -20,16 +20,33 @@ class Profile extends Model
         'name', 'uuid',
     ];
 
+    public static function validationRules($method = null)
+    {
+        $rules = [
+            'name' => 'required|string'
+        ];
+
+        return $rules;
+    }
+
     public static function setFields($data, $method = null)
     {
         $fields = [
             'name' => $data->name,
         ];
 
-        if ($method == 'POST') {
-            $fields['uuid'] = Uuid::uuid4();
-        }
+        $fields['uuid'] = ($method == 'POST') ? Uuid::uuid4() : $data->uuid;
 
         return $fields;
     }
+
+    public static function getProfilesLinks($id)
+    {
+        $prefix = env('API_PREFIX');
+        $version = env('API_VERSION');
+        $model = 'profiles';
+        $profilesEndpoint = "/{$prefix}/{$version}/{$model}/";
+        return app()->make('url')->to($profilesEndpoint . $id);
+    }
+
 }

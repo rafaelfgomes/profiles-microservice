@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Profile as UserProfile;
 use Illuminate\Http\Resources\Json\Resource;
 
 class Profile extends Resource
@@ -23,7 +24,17 @@ class Profile extends Resource
             'attributes' => [
                 'name' => $this->name,
                 'uuid' => $this->uuid
+            ],
+            'links' => [
+                'self' => UserProfile::getProfilesLinks($this->id)
             ]
+        ];
+    }
+
+    public function with($request)
+    {
+        return [
+            'Teste' => 'sssss'
         ];
     }
 
