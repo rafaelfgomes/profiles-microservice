@@ -42,11 +42,9 @@ class Profile extends Model
 
     public static function getProfilesLinks($id)
     {
-        $prefix = env('API_PREFIX');
-        $version = env('API_VERSION');
-        $model = 'profiles';
-        $profilesEndpoint = "/{$prefix}/{$version}/{$model}/";
-        return app()->make('url')->to($profilesEndpoint . $id);
+        $url = env('APP_URL') . ':' . env('APP_PORT');
+        $profilesEndpoint = '/profiles';
+        return $url . $profilesEndpoint . "/{$id}";
     }
 
 }
