@@ -65,13 +65,13 @@ echo -e "\nTimezone: $appTz"
 echo -e "\nCriando e configurando o arquivo .env..."
 cp .env.example .env
 
-sed -i "s+APP_NAME=+APP_NAME=$appName+g" .env
-sed -i "s+APP_ENV=+APP_ENV=$appEnv+g" .env
-sed -i "s+APP_KEY=+APP_KEY=$appKey+g" .env
-sed -i "s+APP_DEBUG=+APP_DEBUG=$appDebug+g" .env
-sed -i "s+APP_URL=+APP_URL=$appUrl+g" .env
-sed -i "s+APP_PORT=+APP_PORT=$appPort+g" .env
-sed -i "s+APP_TIMEZONE=+APP_TIMEZONE=$appTz+g" .env
+sed -i "s+MICROSERVICE_NAME=+MICROSERVICE_NAME=$appName+g" .env
+sed -i "s+MICROSERVICE_ENV=+MICROSERVICE_ENV=$appEnv+g" .env
+sed -i "s+MICROSERVICE_KEY=+MICROSERVICE_KEY=$appKey+g" .env
+sed -i "s+MICROSERVICE_DEBUG=+MICROSERVICE_DEBUG=$appDebug+g" .env
+sed -i "s+MICROSERVICE_URL=+MICROSERVICE_URL=$appUrl+g" .env
+sed -i "s+MICROSERVICE_PORT=+MICROSERVICE_PORT=$appPort+g" .env
+sed -i "s+MICROSERVICE_TIMEZONE=+MICROSERVICE_TIMEZONE=$appTz+g" .env
 
 echo -e "\nCriando o arquivo SQLite para o Banco de Dados..."
 touch $(pwd)/database/profiles.sqlite
