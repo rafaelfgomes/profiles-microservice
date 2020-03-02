@@ -101,7 +101,7 @@ class Handler extends ExceptionHandler
 
         }
 
-        if (env('MICROSERVICE_DEBUG', false)) {
+        if (env('APP_DEBUG', false)) {
             return parent::render($request, $exception);
         }
 

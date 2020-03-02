@@ -42,7 +42,7 @@ class Profile extends Model
 
     public static function getProfilesLinks($id)
     {
-        $url = env('MICROSERVICE_URL') . ':' . env('MICROSERVICE_PORT');
+        $url = env('APP_URL') . ':' . env('APP_PORT');
         $profilesEndpoint = '/profiles';
         return $url . $profilesEndpoint . "/{$id}";
     }
